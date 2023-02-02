@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32413.511
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MindboxShapeLibrary", "MindboxShapeLibrary\MindboxShapeLibrary.csproj", "{64F35FE8-8C36-4590-9990-AA95F7CA75A0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryTests", "LibraryTests\LibraryTests.csproj", "{BCC165B7-CF69-417B-A28C-02DB652F716E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1607ABB9-A995-4A26-800A-B37FA4359D10}"
+	ProjectSection(SolutionItems) = preProject
+		Lesson2.sql = Lesson2.sql
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64F35FE8-8C36-4590-9990-AA95F7CA75A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64F35FE8-8C36-4590-9990-AA95F7CA75A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64F35FE8-8C36-4590-9990-AA95F7CA75A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64F35FE8-8C36-4590-9990-AA95F7CA75A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCC165B7-CF69-417B-A28C-02DB652F716E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCC165B7-CF69-417B-A28C-02DB652F716E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCC165B7-CF69-417B-A28C-02DB652F716E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCC165B7-CF69-417B-A28C-02DB652F716E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4131C3B5-D5E6-45D2-BBF3-A4F76AF54189}
+	EndGlobalSection
+EndGlobal
