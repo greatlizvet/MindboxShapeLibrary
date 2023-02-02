@@ -18,8 +18,10 @@ namespace MindboxShapeLibrary
             }
             set
             {
-                if (value > 0)
-                    segmentA = value;
+                if (value <= 0)
+                    this.IsWrongSegment();
+
+                segmentA = value;                
             }
         }
         public double SegmentB
@@ -30,8 +32,10 @@ namespace MindboxShapeLibrary
             }
             set
             {
-                if (value > 0)
-                    segmentB = value;
+                if (value <= 0)
+                    this.IsWrongSegment();
+                
+                segmentB = value;
             }
         }
         public double SegmentC
@@ -42,15 +46,22 @@ namespace MindboxShapeLibrary
             }
             set
             {
-                if (value > 0)
-                    segmentC = value;
+                if (value <= 0)
+                    this.IsWrongSegment();
+                
+                segmentC = value;
             }
         }
 
         public Triangle(double segmentA, double segmentB, double segmentC)
         {
-            if (segmentA + segmentB <= segmentC || segmentB + segmentC <= segmentA || segmentC + segmentA <= segmentB)
-                throw new ArgumentException("Невозможно создать треугольник с такими сторонами.");
+            if 
+            (
+                segmentA + segmentB <= segmentC || 
+                segmentB + segmentC <= segmentA || 
+                segmentC + segmentA <= segmentB
+            )
+                this.IsWrongSegment();
 
             SegmentA = segmentA;
             SegmentB = segmentB;
@@ -73,13 +84,18 @@ namespace MindboxShapeLibrary
         {
             if
             (
-                segmentA * segmentA == (segmentB * segmentB + segmentC * segmentC) ||
-                segmentB * segmentB == (segmentA * segmentA + segmentB * segmentB) ||
-                segmentC * segmentC == (segmentA * segmentA + segmentB * segmentB)
+                Math.Pow(segmentA, 2) == (Math.Pow(segmentB, 2) + Math.Pow(segmentC, 2)) ||
+                Math.Pow(segmentB, 2) == (Math.Pow(segmentA, 2) + Math.Pow(segmentC, 2)) ||
+                Math.Pow(segmentC, 2) == (Math.Pow(segmentA, 2) + Math.Pow(segmentB, 2))
             )
                 return true;
 
             return false;
+        }
+
+        private void IsWrongSegment()
+        {
+            throw new ArgumentException("Сторона должна быть больше нуля");
         }
     }
 }

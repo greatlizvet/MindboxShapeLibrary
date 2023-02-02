@@ -41,5 +41,13 @@ namespace LibraryTests
 
             Assert.Equal(Math.PI * 2 * 2, circe.CalcPerimetr());
         }
+
+        [Fact]
+        public void CircleChangeRadius()
+        {
+            Circle circle = new Circle(2);
+
+            Assert.Throws<ArgumentException>(() => circle.Radius = -3);
+        }
     }
 }

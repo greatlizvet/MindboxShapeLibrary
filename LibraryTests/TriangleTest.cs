@@ -43,6 +43,14 @@ namespace LibraryTests
             Triangle triangle = new Triangle(3, 4, 5);
 
             Assert.True(triangle.IsRightTriangle());
+
+            triangle = new Triangle(5, 3, 4);
+
+            Assert.True(triangle.IsRightTriangle());
+
+            triangle = new Triangle(4, 5, 3);
+
+            Assert.True(triangle.IsRightTriangle());
         }
 
         [Fact]
@@ -67,6 +75,16 @@ namespace LibraryTests
             IShape shape = new Triangle(1, 1, 1);
 
             Assert.Equal(typeof(Triangle), shape.GetType());
+        }
+
+        [Fact]
+        public void TriagnleChangeSegment()
+        {
+            Triangle triangle = new Triangle(1, 1, 1);
+
+            Assert.Throws<ArgumentException>(() => triangle.SegmentA = -1);
+            Assert.Throws<ArgumentException>(() => triangle.SegmentB = -1);
+            Assert.Throws<ArgumentException>(() => triangle.SegmentC = -1);
         }
     }
 }

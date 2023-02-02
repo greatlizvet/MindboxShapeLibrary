@@ -15,15 +15,17 @@ namespace MindboxShapeLibrary
             }
             set
             {
-                if (value > 0)
-                    radius = value;
+                if (value <= 0)
+                    this.IsWrongRadius();
+
+                radius = value;
             }
         }
 
         public Circle(double radius)
         {
             if (radius <= 0)
-                throw new ArgumentException("Невозможно создать круг с таким радиусом");
+                this.IsWrongRadius();
 
             Radius = radius;
         }
@@ -34,8 +36,13 @@ namespace MindboxShapeLibrary
         }
 
         public double CalcPerimetr()
-        {
+        {            
             return 2 * Math.PI * Radius;
+        }
+
+        private void IsWrongRadius()
+        {
+            throw new ArgumentException("Радиус должен быть больше нуля"); 
         }
     }
 }
